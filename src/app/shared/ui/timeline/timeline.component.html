@@ -1,0 +1,22 @@
+
+        <ol class="relative border-l border-gray-200 dark:border-gray-700">
+            <li *ngFor="let event of events" class="mb-10 ml-6">
+                <span
+                    class="absolute flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full -left-4 ring-8 ring-white">
+                    <img [alt]="event.company" [src]="event.icon"/>
+                </span>
+                <div class="ml-5">
+                    <h3 class="text-2xl font-semibold text-white">
+                        {{event.designation}}
+                    </h3>
+                    <h3 class="text-lg font-normal">{{event.company}}</h3>
+                    <div class="flex items-center my-2">
+                        <span class="mr-2 text-sm font-normal leading-none text-gray-400">{{event.fromDate}} - {{event.toDate}}</span>
+                    </div>
+                    <p class="my-10 text-base font-normal text-gray-500 dark:text-gray-400">
+                        {{event.description}}
+                    </p>
+                </div>
+            </li>
+
+        </ol>
