@@ -25,6 +25,7 @@
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/platform-server": "^16.1.0",
     "@angular/router": "^16.1.0",
+    "@emailjs/browser": "^3.11.0",
     "@notionhq/client": "^2.2.8",
     "@nx/angular": "^16.4.0",
     "front-matter": "^4.0.2",

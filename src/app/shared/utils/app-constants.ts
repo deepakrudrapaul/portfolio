@@ -3,18 +3,22 @@
 export const AppConstants = {
     NOTION_TOKEN: "VITE_NOTION_TOKEN",
     DATABASE_ID: "VITE_DATABASE_ID",
+    SERVICE_ID: "VITE_EMAIL_JS_SERVICE_ID",
+    TEMPLATE_ID:"VITE_EMAIL_JS_TEMPLATE_ID",
+    PUBLIC_KEY:"VITE_EMAIL_JS_PUBLIC_KEY",
+
     Routes: {
         HOME: 'home',
         OI_SCAN: 'oi-scan',
         OI_BUILD_UP: 'oi-buildup',
     },
     NavLinks :[
-        {
-          id: "about",
-          title: "About",
-          path: "/about",
-          external: false
-        },
+        // {
+        //   id: "about",
+        //   title: "About",
+        //   path: "/about",
+        //   external: false
+        // },
         {
           id: "project",
           title: "Projects",
