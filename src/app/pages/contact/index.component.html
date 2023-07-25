@@ -1,0 +1,54 @@
+<section class="bg-primary relative z-0">
+    <div class="sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto">
+      <div class="mt-20">
+        <h2 class="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+          Get in touch.
+        </h2>
+      </div>
+
+      <div class="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+        <div class="flex-1 bg-gradient-to-r from-slate-900 to-slate-700 p-8 rounded-2xl">
+  
+          <form ngNativeValidate #form="ngForm" (ngSubmit)="handleSubmit(form)" class=" flex flex-col gap-8">
+            <label class="flex flex-col">
+              <span class="text-white font-medium mb-4">Your Name</span>
+              <input [ngModel]="message.name" required type="text" minlength="4" name="name"  placeholder="What's your name ?"
+                    class="bg-secondary py-4 px-6 placeholder:text-gray-400 text-primary rounded-lg outline-none border-none font-medium" />
+            </label>
+  
+  
+            <label class="flex flex-col">
+              <span class="text-white font-medium mb-4">Your Email</span>
+              <input [ngModel]="message.email" required type="email" name="email"  placeholder="What's your email ?"
+                    class="bg-secondary py-4 px-6 placeholder:text-gray-400 text-primary rounded-lg outline-none border-none font-medium" />
+            </label>
+  
+  
+            <label class="flex flex-col">
+              <span class="text-white font-medium mb-4">Your Message</span>
+              <textarea [ngModel]="message.content" required rows="7" minlength="50"  name="message"  placeholder="Your message..."
+                    class="bg-secondary py-4 px-6 placeholder:text-gray-400 text-primary rounded-lg outline-none border-none font-medium"></textarea>
+            </label>
+  
+            <div>
+              <button [disabled]="isLoading" type="submit" class="text-white bg-tertiary w-1/4 hover:bg-orange-400 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                {{isLoading ? 'Sending...' : 'Send'}}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="toast-simple" [ngClass]="showSuccessMessage ? 'flex' : 'hidden'" class="fixed top-20 right-5 items-center w-full max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x divide-gray-200 rounded-lg shadow dark:text-gray-400 dark:divide-gray-700 space-x dark:bg-gray-800" role="alert">
+        <svg class="w-5 h-5 text-blue-600 dark:text-blue-500 rotate-45" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 17 8 2L9 1 1 19l8-2Zm0 0V9"/>
+        </svg>
+        <div class="pl-4 text-sm font-normal">Message sent successfully.</div>
+    </div>
+
+
+
+
+     
+    </div>
+</section>
