@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppConstants } from '../../utils/app-constants';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <section class="bg-primary relative z-0">
       <div
@@ -13,10 +14,10 @@ import { AppConstants } from '../../utils/app-constants';
       >
         <div>
           <ol class="flex justify-center gap-10">
-            <li>About</li>
-            <li>Work</li>
-            <li>Blog</li>
-            <li>Contact</li>
+          <li *ngFor="let link of navLinks"  [ngClass]="{'text-white': true, 'text-secondary': false}" class="hover:text-orange-300 text-[18px] font-medium cursor-pointer">
+            <a *ngIf="!link.external" [routerLink]="[link.path]">{{link.title}}</a>
+            <a *ngIf="link.external" target="_blank" href="{{link.path}}">{{link.title}}</a>
+        </li>
           </ol>
 
           <div class="flex justify-center gap-5 py-5">
@@ -52,4 +53,5 @@ import { AppConstants } from '../../utils/app-constants';
 })
 export class FooterComponent {
   icons = AppConstants.Icon;
+  navLinks = AppConstants.NavLinks;
 }
