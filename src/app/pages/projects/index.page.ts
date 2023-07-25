@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { DataService } from '../shared/data-access/data.service';
+import { DataService } from '../../shared/data-access/data.service';
 import { Observable, tap } from "rxjs";
-import { Project } from "../shared/utils/types";
+import { Project } from "../../shared/utils/types";
 import { CommonModule } from "@angular/common";
 
 
@@ -12,7 +12,7 @@ import { CommonModule } from "@angular/common";
   selector: 'app-projects',
   imports:[CommonModule],
   standalone: true,
-  templateUrl: './projects.view.html',
+  templateUrl: './index.component.html',
 })
 export default class ProjectsComponent {
 
