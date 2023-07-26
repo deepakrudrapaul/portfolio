@@ -21,6 +21,7 @@ import { RouterLink } from "@angular/router";
           </ol>
 
           <div class="flex justify-center gap-5 py-5">
+            <a href="https://github.com/deepakrudrapaul" target="_blank">
             <div
               class="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
@@ -30,7 +31,21 @@ import { RouterLink } from "@angular/router";
                 class="w-1/2 h-1/2 object-contain"
               />
             </div>
+          </a>
 
+            <a href="https://www.linkedin.com/in/deepak-rudra-paul/" target="_blank">
+            <div
+              class="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+            >
+              <img
+                [src]="icons.linkedin"
+                alt="Github"
+                class="w-1/2 h-1/2 object-contain"
+              />
+            </div>
+          </a>
+
+            <a href="https://twitter.com/deepakrudrapaul" target="_blank">
             <div
               class="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
@@ -40,6 +55,7 @@ import { RouterLink } from "@angular/router";
                 class="w-1/2 h-1/2 object-contain"
               />
             </div>
+          </a>
           </div>
 
           <div class="flex justify-center">
