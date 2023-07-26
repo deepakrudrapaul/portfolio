@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AppConstants, Event } from '../shared/utils/app-constants';
+import { AppConstants } from '../shared/utils/app-constants';
 import { NgFor } from '@angular/common';
 import { TimelineComponent } from '../shared/ui/timeline/timeline.component';
 import { FooterComponent } from '../shared/ui/footer/footer.component';
