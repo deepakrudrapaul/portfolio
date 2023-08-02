@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { AppConstants } from '../shared/utils/app-constants';
 import { NgFor } from '@angular/common';
-import { TimelineComponent } from '../shared/ui/timeline/timeline.component';
-import { HeroComponent } from "../shared/ui/hero/hero.component";
+import { TimelineComponent } from '../components/timeline/timeline.component';
+import { HeroComponent } from "../components/hero/hero.component";
 
 @Component({
   selector: 'app-home',

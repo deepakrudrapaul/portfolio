@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppConstants } from "../../utils/app-constants";
 import { RouterLink } from "@angular/router";
+import { AppConstants } from "../../shared/utils/app-constants";
 
 @Component({
   selector: 'app-hero',
