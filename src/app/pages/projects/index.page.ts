@@ -1,30 +1,25 @@
-import { Component, inject } from '@angular/core';
-import { DataService } from '../../shared/data-access/data.service';
-import { Observable, tap } from "rxjs";
-import { Project } from "../../shared/utils/types";
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from "@angular/common";
-
-
-
+import { ProjectStore } from "../../store/project.store";
+import { ProjectCardComponent } from "../../components/project-card/project-card.component";
 
 
 @Component({
   selector: 'app-projects',
-  imports:[CommonModule],
+  imports:[CommonModule, ProjectCardComponent],
   standalone: true,
   templateUrl: './index.component.html',
+  providers:[ProjectStore]
 })
-export default class ProjectsComponent {
+export default class ProjectsComponent implements OnInit {
+ 
+  isLoading: boolean = false;
+  projectStore = inject(ProjectStore);
+  projects$ = this.projectStore.projects$;
+  error$ = this.projectStore.error$;
 
-  dataService = inject(DataService);
-  projects$: Observable<Project[]>;
-  loading: boolean = false;
-
-  constructor(){
-    this.loading = true;
-    this.projects$ = this.dataService.getPosts().pipe(tap(()=> this.loading = false));
+  ngOnInit(): void {
+    this.projectStore.loadProjects();
   }
-
-
   
 }

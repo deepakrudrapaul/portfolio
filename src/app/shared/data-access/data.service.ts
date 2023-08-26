@@ -12,7 +12,7 @@ export class DataService {
   private baseUrl: string =  import.meta.env.BASE_URL + "api/v1/projects";
   private http = inject(HttpClient);
 
-   getPosts(): Observable<Project[]> {
+   getProjects(): Observable<Project[]> {
     return this.http.get<Project[]>(this.baseUrl);
    }
 

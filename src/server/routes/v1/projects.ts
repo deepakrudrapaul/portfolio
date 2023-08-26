@@ -1,27 +1,18 @@
-import { Client } from "@notionhq/client";
 import { defineEventHandler } from 'h3';
+import { Client, Databases } from 'appwrite';
 
-const token = import.meta.env['VITE_NOTION_TOKEN'];
-const databaseId = import.meta.env['VITE_DATABASE_ID'];
-const notion = new Client({auth: token });
+const url = import.meta.env['VITE_APPWRITE_URL'];
+const projectId = import.meta.env['VITE_APPWRITE_PROJECT_ID'];
+const databaseId = import.meta.env['VITE_APPWRITE_DATABASE_ID'];
+const collectionId = '64cfc2db239f7eefc520';
 
+const client = new Client().setEndpoint(url).setProject(projectId);
 
+const databases = new Databases(client);
 
-
-const  getProjects = async () => {
-   
-   const {results} = await notion.databases.query({database_id: databaseId});
-   const data = results.map((result:any) => {
-      let obj:any = {};
-      obj.name = result.properties.name.title[0].plain_text;
-      obj.description = result.properties.description.rich_text[0].plain_text;
-      obj.image = result.properties.image.files[0].name;
-      obj.githubLink = result.properties.githubLink.url;
-      obj.projectLink = result.properties.projectLink.url;
-      obj.tag = result.properties.tag.multi_select.map((tag:any) => tag.name);
-      return obj;
-   })
-   return data;
-}
+const getProjects = async () => {
+  const { documents } = await databases.listDocuments(databaseId, collectionId);
+  return documents;
+};
 
 export default defineEventHandler(getProjects);
