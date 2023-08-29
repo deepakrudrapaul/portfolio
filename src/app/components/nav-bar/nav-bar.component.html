@@ -1,7 +1,7 @@
 <nav class="w-full flex items-center py-5 fixed top-0 z-20 sm:px-16 px-6 bg-primary">
     <div class="w-full flex justify-between items-center max-w-7xl mx-auto">
       <div routerLink="/" class="flex items-center gap-2">
-        <img [src]="icons.logo" alt='Logo'class="w-9 h-9 object-contain"/>  
+        <!-- <img src="/logo.svg" alt='Logo'class="w-9 h-9 object-contain"/>   -->
         <p class="text-secondary text-[18px] font-bold cursor-pointer">
           Deepak Paul
         </p>
@@ -17,7 +17,7 @@
       </ul>
       </div>
       <div class="sm:hidden flex flex-1 justify-end items-center">
-        <img [src]="toggle ? icons.close : icons.menu"  alt="menu" class="w-[28px] h-[28px] object-contain cursor-pointer" (click)="toggleMenu()"/>
+        <img [src]="toggle ? '/close.svg' : '/menu.svg'"  alt="menu" class="w-[28px] h-[28px] object-contain cursor-pointer" (click)="toggleMenu()"/>
         <div [ngClass]="!toggle ? 'hidden': 'flex'" class="p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl">
         <ul class="flex justify-end items-start flex-col gap-4">
             <li *ngFor="let link of navLinks"  [ngClass]="{'text-black': false, 'text-secondary': false}" class="font-poppins font-medium cursor-pointer text-[16px]">
